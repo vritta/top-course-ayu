@@ -11,8 +11,10 @@ const Cards = ({courses}) => {
                         allCourses.push(course);
                     }
                 )
+                // allCourses = allCourses.concat(courseCategory);
             }
         )
+        console.log("saare courses - ",allCourses);
         return allCourses;
     }
     // useEffect(()=>{

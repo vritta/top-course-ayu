@@ -18,7 +18,7 @@ const App = () => {
       const output = await res.json();
       // return data;
       setCourses(output.data);
-      console.log(output);
+      // console.log(output);
     }
     catch(err){
       toast.error("Something went wrong!")
@@ -32,7 +32,7 @@ const App = () => {
   )
 
   return (
-  <div>
+  <div className="min-h-screen flex">
     <Navbar/>
     <Filter filterData={filterData}/>
     {/* <Spinner/> */}
