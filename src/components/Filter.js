@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Filter = (props) => {
   let filterData = props.filterData;
-    let category = props.category;
-    let setCategory = props.setCategory;
+  // let category = props.category;
+  // let setCategory = props.setCategory;
 
-    function filterHandler(title) {
-        setCategory(title);
-    }
+  const [category,setCategory] = useState(props.setCategory);
+  function filterHandler(title) {
+      setCategory(title);
+  }
 
+  // useEffect(()=>{
+  //   filterHandler(title)
+  // },[]) 
   return (
     <div className='w-11/12 flex flex-wrap max-w-max mx-auto gap-x-4 py-4'>
       {
