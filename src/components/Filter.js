@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
 
 const Filter = (props) => {
   let filterData = props.filterData;
-  // let category = props.category;
-  // let setCategory = props.setCategory;
+  let category = props.category;
+  let setCategory = props.setCategory;
 
-  const [category,setCategory] = useState(props.setCategory);
   function filterHandler(title) {
       setCategory(title);
   }
@@ -17,7 +16,7 @@ const Filter = (props) => {
     <div className='w-11/12 flex flex-wrap max-w-max mx-auto gap-x-4 py-4'>
       {
         filterData.map((data)=>{
-        return <button key={data.id}
+        return <button key={data.id} onClick={()=>filterHandler(data.title)} 
         className={`text-lg px-2 py-1 rounded-md font-medium 
             text-white bg-black hover:bg-opacity-50 border-2 transition-all duration-300
             ${category === data.title ? 
